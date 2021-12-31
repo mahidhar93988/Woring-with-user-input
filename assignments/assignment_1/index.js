@@ -1,17 +1,27 @@
 function getNameFromCommandLine() {
-    // Write you code here, name should be taken as args in process.argv
+  let name = process.argv;
+  len = name.length;
+  return name[len - 1];
+  // Write you code here, name should be taken as args in process.argv
 }
 
 function getNameFromEnv() {
-    // Write your code here
+  envName = process.env.name;
+  return envName;
+  // Write your code here
 }
 
 function getNameFromReadLine() {
-    // Write your code here
+  var readLine = require("readline");
+  var rl = readLine.createInterface(process.stdin, process.stdout);
+  rl.question(" ", (age) => {
+    console.log(age);
+    rl.close();
+  });
 }
 
 module.exports = {
-    getNameFromCommandLine,
-    getNameFromEnv,
-    getNameFromReadLine
-}
+  getNameFromCommandLine,
+  getNameFromEnv,
+  getNameFromReadLine,
+};
